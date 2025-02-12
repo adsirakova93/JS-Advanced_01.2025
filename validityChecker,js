@@ -1,0 +1,38 @@
+function isValidDistance(x1, y1, x2, y2) {
+    // Helper function to check if a distance is valid (integer).
+    function isInteger(distance) {
+        return Number.isInteger(distance);
+    }
+
+    // Function to calculate distance between (x, y) and the origin (0, 0)
+    function calculateDistance(x, y) {
+        return Math.sqrt(x * x + y * y);
+    }
+
+    // Calculate distances
+    let distance1 = calculateDistance(x1, y1);
+    let distance2 = calculateDistance(x2, y2);
+    let distance3 = calculateDistance(x2 - x1, y2 - y1);
+
+    // Check if the distances are valid (integer)
+    if (isInteger(distance1)) {
+        console.log(`${x1}, ${y1} to {0, 0} is valid`);
+    } else {
+        console.log(`${x1}, ${y1} to {0, 0} is invalid`);
+    }
+
+    if (isInteger(distance2)) {
+        console.log(`${x2}, ${y2} to {0, 0} is valid`);
+    } else {
+        console.log(`${x2}, ${y2} to {0, 0} is invalid`);
+    }
+
+    if (isInteger(distance3)) {
+        console.log(`${x1}, ${y1} to ${x2}, ${y2} is valid`);
+    } else {
+        console.log(`${x1}, ${y1} to ${x2}, ${y2} is invalid`);
+    }
+}
+
+// Example usage:
+isValidDistance(3, 4, 5, 12);  // Example where distances are checked
